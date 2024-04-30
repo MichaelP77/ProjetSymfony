@@ -1,5 +1,8 @@
-import { startStimulusApp } from '@symfony/stimulus-bundle';
+import { Application } from 'stimulus';
 
-const app = startStimulusApp();
-// register any custom, 3rd party controllers here
-// app.register('some_controller_name', SomeImportedController);
+// Create a new Stimulus application
+const application = Application.start();
+
+// Automatically discover and register Stimulus controllers from your modules
+autoload(require.context('./controllers', true, /\.js$/), application);
+

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<main>
+
+  
+  
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+  
+    <div class="container marketing">
+  
+      <!-- Three columns of text below the carousel -->
+      <div class="row mt-5">
+        <div class="col-lg-4">
+          <img loading="lazy" width="320" height="180" src="{{asset('images/connexion.png')}}"/>
+          <h2 class="fw-bold mt-4">Connexion, Inscription et déconnexion</h2>
+          <p class="text-start">Sur ce site, vous pouvez vous connecter, déconnecter et vous inscrire !</p>
+          
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <img loading="lazy" width="320" height="180" src="{{asset('images/article.png')}}"/>
+          <h2 class="fw-bold mt-4">Création d'articles</h2>
+          <p class="text-start">En vous rendant sur le Tableau de bord en haut à gauche, vous pourrez créer, modifier ou supprimer un article !</p>
+          
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <img loading="lazy" width="320" height="180" src="{{asset('images/dashboard.png')}}"/>
+          <h2 class="fw-bold mt-4">Tableau de bord</h2>
+          <p class="text-start">Une fois dans le tableau de bord, vous pouvez cliquer sur "ajouter" à gauche pour créer votre article.</p>
+          
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+  
+      <div id="articles-list">
+        {% include 'article/list.html.twig' with { articles: articles, leftCol: 5, rightCol: 7 } %}
+    </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="col-xl-4">
+        <div class="position-sticky" style="top: 2rem;">
+            {% include 'widget/categories.html.twig' %}
+        </div>
+
+  
+  
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-end"><a href="#">Retour en haut</a></p>
+      <p>&copy; Michael PICOU</p>
+    </footer>
+  </main>
+{% endblock %}
+
+{% block javascripts %}
+            {{ encore_entry_script_tags('home') }}
+        {% endblock %}
